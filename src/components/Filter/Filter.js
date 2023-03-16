@@ -1,18 +1,24 @@
-import PropTypes from 'prop-types';
+import { useDispatch } from 'react-redux';
+import { filterContact } from 'components/redux/actions';
+
 import css from './filter.module.css';
 
-export const Filter = ({ value, onChange }) => {
+export const Filter = () => {
+  const dispatch = useDispatch();
+
+  const onFilterSearch = evt => {
+    dispatch(filterContact(evt.target.value));
+  };
   return (
-    <input
-      className={css.form__inputSearch}
-      type="text"
-      name="filter"
-      value={value}
-      onChange={onChange}
-    />
+    <>
+      <h1 className={css.form__title}>Contacts:</h1>
+      <h1 className={css.form__title}> Find contacts by name</h1>
+      <input
+        className={css.form__inputSearch}
+        type="text"
+        name="filter"
+        onChange={onFilterSearch}
+      />
+    </>
   );
-};
-Filter.prototype = {
-  value: PropTypes.string,
-  onChange: PropTypes.func,
 };
