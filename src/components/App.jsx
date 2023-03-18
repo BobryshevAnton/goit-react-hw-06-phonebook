@@ -2,7 +2,6 @@ import { ContactForm } from './ContactForm/ContactForm';
 import { ContactList } from './ContactList/ContactList';
 import { Filter } from './Filter/Filter';
 // import { Modal } from './Modal/Modal';
-
 import css from './app.module.css';
 
 const App = () => {

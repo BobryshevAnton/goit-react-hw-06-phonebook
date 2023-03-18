@@ -1,8 +1,6 @@
 import css from './contactList.module.css';
-import { useDispatch } from 'react-redux';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { deleteContacts } from 'components/redux/contactSlise';
-//
 import { getContacts } from 'components/redux/selectors';
 
 export const ContactList = () => {
@@ -11,7 +9,7 @@ export const ContactList = () => {
   return (
     <>
       <ul className={css.contactList}>
-        {contacts.contacts.map(elem => (
+        {contacts.map(elem => (
           <li key={elem.id} className={css.contactItem}>
             &#8226;{elem.name}: {elem.number}
             <button

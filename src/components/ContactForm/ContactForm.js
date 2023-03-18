@@ -30,7 +30,7 @@ export const ContactForm = () => {
 
   const handleSubmit = evt => {
     evt.preventDefault();
-    const inclCont = contacts.contacts.some(elem => elem.name === name);
+    const inclCont = contacts.some(elem => elem.name === name);
     if (inclCont) {
       alert(`${name} already in contacts`);
       return;
