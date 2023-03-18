@@ -1,5 +1,5 @@
 import { useDispatch } from 'react-redux';
-import { filterContact } from 'components/redux/actions';
+import { filterContact } from 'components/redux/filterSlice';
 
 import css from './filter.module.css';
 
