@@ -22,9 +22,9 @@ const contactsSlice = createSlice({
       prepare(name, number) {
         return {
           payload: {
+            id: nanoid(),
             name,
             number,
-            id: nanoid(),
           },
         };
       },
@@ -36,16 +36,8 @@ const contactsSlice = createSlice({
         ),
       };
     },
-    filterContact(state, action) {
-      return {
-        contacts: state.contacts.filter(elem =>
-          elem.name.toLowerCase().includes(action.payload.toLowerCase())
-        ),
-      };
-    },
   },
 });
 
-export const { addContacts, deleteContacts, filterContact } =
-  contactsSlice.actions;
+export const { addContacts, deleteContacts } = contactsSlice.actions;
 export const contactsReducer = contactsSlice.reducer;
